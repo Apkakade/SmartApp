@@ -38,7 +38,7 @@ class ViewController: UIViewController , UITextFieldDelegate{
     func getApiData()
     {
         AF.request(Webservices.MainBaseUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil).response { [self] (response) in
-               // print(response.result)
+             
             if let data = response.data{
                 do {
                     
@@ -48,7 +48,6 @@ class ViewController: UIViewController , UITextFieldDelegate{
                     if model.results.count > 0
                     {
 
-                    print(model.results)
                     self.modelPlayingList1 += model.results
                     self.modelPlayingList += model.results
                     self.uiClcView_ListVideo.reloadData()
